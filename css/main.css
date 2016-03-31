@@ -125,8 +125,8 @@ body {
 
 /*==========  Content  ==========*/
 
-.main_content {
-    margin-bottom: 20px;
+.main_content .container {
+    margin-bottom: 40px;
 }
 .channel_block {
     border: 1px solid #ddd;
