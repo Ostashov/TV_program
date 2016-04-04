@@ -121,13 +121,19 @@ $(document).ready(function() {
 
     $(window).mousemove(function (pos) {
         var elem_height = $(".pop_up").outerHeight();
+        var elem_width = $(".pop_up").outerWidth();
         var window_height = $(window).height();
+        var window_width = $(window).width();
         var margin = 25;
         var posx = getPosition(pos).x;
         var posy = getPosition(pos).y;
         var scrollTop = document.body.scrollTop;
         
-            $(".pop_up").css('left',(getPosition().x + 25)+'px');
+        if (posx + margin + margin + elem_width > window_width) {
+            $(".pop_up").css('left',posx - margin - elem_width + 'px');
+        } else {
+            $(".pop_up").css('left',posx + margin +'px');
+        }
 
         if (posy - elem_height / 2 - margin < scrollTop) {
             $(".pop_up").css('top',margin + scrollTop + 'px');
